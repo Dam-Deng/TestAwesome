@@ -9,6 +9,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  Image,
   View
 } from 'react-native';
 
@@ -26,6 +27,8 @@ class AwesomeProject extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+       style={styles.pic} />
       </View>
     );
   }
@@ -42,11 +45,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: 'red',
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  pic: {
+    width: 100,
+    height: 100
   },
 });
 
