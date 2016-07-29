@@ -1,7 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Created by dam on 29/7/2016.
  */
 
 import React, {Component} from 'react';
@@ -13,60 +11,131 @@ import {
     View
 } from 'react-native';
 
-class AwesomeProject extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!
-                </Text>
-                <Text style={styles.instructions}>
-                    To get started, edit index.ios.js
-                </Text>
-                <Text style={styles.instructions}>
-                    Press Cmd+R to reload,{'\n'}
-                    Cmd+D or shake for dev menu
-                </Text>
-                <Image source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
-                       style={styles.pic}/>
-            </View>
-        );
-    }
-}
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#F5FCFF',
-        borderWidth: 2,
-        borderColor: '#00ff00',
+        padding: 15,
     },
-    welcome: {
-        flex: 3,
-        fontSize: 20,
-        textAlign: 'center',
-        flexDirection: 'a',
-        margin: 10,
-        color: 'red',
-        borderWidth: 2,
-        borderColor: '#00ff00',
+    textGroup1: {
+        flex: 1,
     },
-    instructions: {
-        flex: 2,
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-        borderWidth: 2,
-        borderColor: '#00ff00',
+    title: {
+        fontSize: 21,
+        color: 'green',
     },
-    pic: {
-        flex: 2,
-        alignSelf: 'flex-start',
-        borderWidth: 2,
-        borderColor: '#00ff00',
-        width: 200
+    row: {
+        flexDirection: 'row',
+
     },
 });
+
+
+class MyImage extends Component {
+    render() {
+        return (
+            <Image source={{url: 'https://facebook.github.io/react/img/logo_og.png'}}
+                   style={{width: 100, height: 50,}}/>
+        );
+    }
+}
+
+class MyTextGroup extends Component {
+    defaultProps = {
+        title1: 'TITLE1',
+        title2: 'TITLE2',
+    }
+
+
+    render() {
+        const {title1, title2, viewStyle, textStyle} = this.props;
+        return (
+            <View style={viewStyle}>
+                <Text style={textStyle}>
+                    {title1}
+                </Text>
+                <Text>
+                    {title2}
+                </Text>
+            </View>
+        )
+    }
+}
+
+
+class AwesomeProject extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <View style={styles.row}>
+
+                    <View style={styles.group1}>
+                        <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                        <MyImage />
+                    </View>
+
+                    <View style={styles.column}>
+                        <View style={styles.group1}>
+                            <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1}
+                                         textStyle={styles.title}/>
+                            <MyImage />
+                        </View>
+
+                        <View style={styles.row}>
+
+                            <View style={styles.group1}>
+                                <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1}
+                                             textStyle={styles.title}/>
+                                <MyImage />
+                            </View>
+
+                            <View style={styles.group1}>
+                                <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1}
+                                             textStyle={styles.title}/>
+                                <MyImage />
+                            </View>
+                        </View>
+                    </View>
+
+                </View>
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+                <View style={styles.group1}>
+                    <MyTextGroup title1='123' title2='456' viewStyle={styles.textGroup1} textStyle={styles.title}/>
+                    <MyImage />
+                </View>
+            </View>
+        );
+    }
+}
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
